@@ -1,0 +1,7 @@
+here will be some controllers, dto's etc
+
+first steps:
+add dependencies
+in terminal put "gauge install java"
+in terminal put "gauge init java"
+add IDEA plugin for gauge
