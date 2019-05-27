@@ -10,7 +10,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @Slf4j
-public class firstSteps extends AbstractStep {
+public class FirstSteps extends AbstractStep {
 
     @Step("Is <first_value> + <second_value> = <result>")
     public void checkSum(int first_value, int second_value, int result){
