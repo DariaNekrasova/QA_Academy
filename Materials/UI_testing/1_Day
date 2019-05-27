@@ -189,6 +189,8 @@ https://comaqa.gitbook.io/selenium-webdriver-lectures/
 https://automated-testing.info/t/webdriver-harakteristika-osnovnyh-komand/2290
 Selenide:
 https://ru.selenide.org/documentation.html
+
+
 ------------------------------------------------------------- Локаторы (по признаку элемента, по Xpath, по CSS) --------------------------------------------------------------------
 Инструмент автоматизации веб-приложений, который работает через браузер
 (Selenium или любой другой) должен иметь механизм поиска элементов на странице

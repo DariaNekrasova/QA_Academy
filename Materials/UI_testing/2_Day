@@ -82,6 +82,7 @@ WebElement dynamicElement = (new WebDriverWait(driver, 10))
 ------------------------------------------------------------- Humcrest, матчеры -------------------------------------------------------------------------
 Humcrest, матчеры:
 https://sysout.ru/rabota-s-hamcrest/
+http://hamcrest.org/JavaHamcrest/
 AssertJ:
 https://www.baeldung.com/introduction-to-assertj
 
