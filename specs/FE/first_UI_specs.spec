@@ -5,4 +5,4 @@ First tests
 -----------
 * Set webDriver
 * Go to google
-* Search "How search in google"
+* Search "How to search in google"

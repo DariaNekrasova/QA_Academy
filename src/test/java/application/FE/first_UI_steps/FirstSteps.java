@@ -27,7 +27,7 @@ public class FirstSteps extends AbstractStep {
     }
 
     @Step("Go to google")
-    public void GoTOGoogle() {
+    public void GoToGoogle() {
         open("https://www.google.com/");
         assertEquals( "https://www.google.com/", WebDriverRunner.currentFrameUrl(), "Current site is not google! =(");
     }
