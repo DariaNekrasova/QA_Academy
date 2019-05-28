@@ -1,7 +1,6 @@
 package gauge;
 
 import com.thoughtworks.gauge.*;
-import context.DriverContext;
 
 public class TestContext {
     @BeforeSuite

@@ -1,4 +1,4 @@
-package application.FE;
+package application.FE.Google;
 
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;

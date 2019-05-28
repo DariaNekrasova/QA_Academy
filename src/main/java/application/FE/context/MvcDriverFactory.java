@@ -1,4 +1,4 @@
-package context;
+package application.FE.context;
 
 import org.openqa.selenium.WebDriver;
 

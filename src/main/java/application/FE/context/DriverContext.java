@@ -1,4 +1,4 @@
-package context;
+package application.FE.context;
 
 import com.codeborne.selenide.Configuration;
 import com.sun.org.apache.xerces.internal.impl.PropertyManager;

@@ -1,7 +1,6 @@
-package context;
+package application.FE.context;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.logging.LoggingPreferences;
 
 public class DriverFactory {
 

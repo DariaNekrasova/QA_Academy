@@ -1,19 +1,19 @@
 package application.FE.first_UI_steps;
 
-import application.FE.Google;
+import application.FE.Google.Google;
+import application.FE.context.DriverFactory;
 import com.codeborne.selenide.WebDriverRunner;
 import com.thoughtworks.gauge.*;
-import context.*;
 import gauge.AbstractStep;
 import org.openqa.selenium.WebDriver;
 
 import java.util.concurrent.TimeUnit;
 
 import static com.codeborne.selenide.Selenide.open;
-import static context.DriverContext.setup;
+import static application.FE.context.DriverContext.setup;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class FirstSteps extends AbstractStep {
+public class GoogleTestingSteps extends AbstractStep {
 
     WebDriver webDriver;
 

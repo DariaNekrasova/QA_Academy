@@ -1,11 +1,7 @@
-package context;
+package application.FE.context;
 
 import com.codeborne.selenide.WebDriverRunner;
-import lombok.SneakyThrows;
 import org.openqa.selenium.*;
-
-import java.net.URL;
-import java.util.Date;
 
 import static com.codeborne.selenide.Selenide.open;
 
