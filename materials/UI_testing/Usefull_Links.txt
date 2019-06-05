@@ -5,3 +5,7 @@ https://habr.com/ru/post/279535/
 https://www.youtube.com/watch?v=4dh--iD_zK8
 
 ++ проблемы селениума с isVisible и => в selenide где автоматическое ожидание что элемент isVisible=true
+
+
+польщовательские расширения для Selenium
+https://selenium2.ru/docs/user-extensions.html

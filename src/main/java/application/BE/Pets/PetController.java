@@ -4,7 +4,6 @@ import application.BE.AbstractController;
 import application.BE.DtoUtils;
 import application.BE.model.petsModeles.PetCategoryDto;
 import application.BE.model.petsModeles.PetDto;
-import com.google.inject.Inject;
 
 import static java.text.MessageFormat.format;
 

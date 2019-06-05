@@ -28,10 +28,79 @@ Node - Узлы являются Селен экземплярами, котор
 Тестирование
 Анализ результатов
 
+selenium-grid:
+https://selenium2.ru/docs/selenium-grid.html
+
 https://www.seleniumhq.org/docs/07_selenium_grid.jsp
 Настраиваем Selenium Grid за 5 минут:
 http://automation-remarks.com/nastraivaiem-selenium-grid-za-5-minut/
 https://selenium2.ru/docs/selenium-grid.html
+
+------------------------------------------------------------- HTML Elements framework ------------------------------------------------------------------------------------
+https://github.com/yandex-qatools/htmlelements
+
+<dependency>
+    <groupId>ru.yandex.qatools.htmlelements</groupId>
+    <artifactId>htmlelements-java</artifactId>
+    <version>1.19</version> <!-- 1.18+ is SELENIUM 3.5.1+ compatible -->
+</dependency>
+
+@Name("Search form") // имя
+@FindBy(xpath = "//form") // локатор общего элемента
+public class SearchArrow extends HtmlElement {
+
+    @Name("Search request input")
+    @FindBy(id = "searchInput") //локатор искомого элемента
+    private TextInput requestInput;
+
+    @Name("Search button")
+    @FindBy(className = "b-form-button__input")
+    private Button searchButton;
+
+    public void search(String request) { //работа с найденными элементами
+        requestInput.sendKeys(request);
+        searchButton.click();
+    }
+}
+
+public class SearchPage { // page object
+
+    private SearchArrow searchArrow; // использование описанного элемента как части страницы
+    // Other blocks and elements here ...
+
+    public SearchPage(WebDriver driver) { // конструктор
+        PageFactory.initElements(new HtmlElementDecorator(new HtmlElementLocatorFactory(driver)), this);
+    }
+
+    public void search(String request) { // использование методов элемента страницы
+        searchArrow.search(request);
+    }
+
+    // Other methods here ...
+}
+
+public class SampleTest {
+
+    private WebDriver driver = new FirefoxDriver();
+    private SearchPage searchPage = new SearchPage(driver);
+
+    @Before
+    public void loadPage() {
+        driver.get("http://www.yandex.com");
+    }
+
+    @Test
+    public void sampleTest() {
+        searchPage.search("yandex"); // вызов page object и работа с ним
+        // Some assertion here
+    }
+
+    @After
+    public void closeDriver() {
+        driver.quit();
+    }
+}
+
 ------------------------------------------------------------- Selenide - плюсы и минусы, отличия от Selenium -------------------------------------------------------------
 
 Selenium WebDriver - отличный инструмент.
