@@ -1,0 +1,6 @@
+Dev:
+https://timemaster-dev2.sidenis.local
+Swagger:
+https://timemaster-dev2.sidenis.local/swagger/
+Jira:
+https://jira.sidenis.com/secure/RapidBoard.jspa?rapidView=61&projectKey=TM&selectedIssue=TM-384

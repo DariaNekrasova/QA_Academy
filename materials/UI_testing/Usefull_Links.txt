@@ -9,3 +9,6 @@ https://www.youtube.com/watch?v=4dh--iD_zK8
 
 польщовательские расширения для Selenium
 https://selenium2.ru/docs/user-extensions.html
+
+Spring
+https://habr.com/ru/post/455794/
