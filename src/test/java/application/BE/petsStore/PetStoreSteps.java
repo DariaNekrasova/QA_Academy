@@ -1,8 +1,8 @@
 package application.BE.petsStore;
 
 import application.BE.Pets.PetController;
-import application.BE.model.petsModeles.PetCategoryDto;
-import application.BE.model.petsModeles.PetDto;
+import application.BE.model.PetsModeles.PetCategoryDto;
+import application.BE.model.PetsModeles.PetDto;
 import com.thoughtworks.gauge.Step;
 import gauge.AbstractStep;
 

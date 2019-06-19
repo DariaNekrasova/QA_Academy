@@ -1,4 +1,4 @@
-package application.BE.model.petsModeles;
+package application.BE.model.PetsModeles;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AccessLevel;

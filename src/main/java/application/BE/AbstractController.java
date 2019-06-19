@@ -2,6 +2,7 @@ package application.BE;
 
 import com.jayway.restassured.RestAssured;
 import com.jayway.restassured.http.ContentType;
+import com.jayway.restassured.response.Header;
 import com.jayway.restassured.response.ValidatableResponse;
 import com.jayway.restassured.specification.RequestSpecification;
 
@@ -20,7 +21,10 @@ public abstract class AbstractController {
 
     protected RequestSpecification getSpecification() {
         RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
-        return given().contentType(ContentType.JSON);
+        return given().header(new Header("csrftoken",
+                                         "Mq4Yu6OUxFPSl680bQ6qngyW8GeIcaA4OdpEnxK2Bw05dX9DZfDr3fRoUTKEANzB"))
+                      .header(new Header("sessionid", "k480bjkka0de0gmwijkh83eorplrwvqa"))
+                      .contentType(ContentType.JSON);
     }
 
     protected String get(String uri) {
@@ -43,8 +47,12 @@ public abstract class AbstractController {
         return specification.when().get(uri).then();
     }
 
-    protected void post(String uri) {
-        post(uri, EMPTY_BODY, StatusCodes.OK);
+    //protected void post(String uri) {
+    //    post(uri, EMPTY_BODY, StatusCodes.OK);
+    //}
+
+    protected ValidatableResponse post(String uri) {
+        return getSpecification().when().post(uri).then();
     }
 
     protected void post(String uri, int statusCode) {

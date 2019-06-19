@@ -1,15 +1,15 @@
-package application.BE.model.petsModeles;
+package application.BE.model.TimeMasterModeles;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lombok.AccessLevel;
-import lombok.Data;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class PetTagDto {
+@Builder
+public class UserDto {
 
-    int id;
-    String name;
+    String username;
+    String password;
 }

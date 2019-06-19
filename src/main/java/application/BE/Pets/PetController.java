@@ -2,8 +2,8 @@ package application.BE.Pets;
 
 import application.BE.AbstractController;
 import application.BE.DtoUtils;
-import application.BE.model.petsModeles.PetCategoryDto;
-import application.BE.model.petsModeles.PetDto;
+import application.BE.model.PetsModeles.PetCategoryDto;
+import application.BE.model.PetsModeles.PetDto;
 
 import static java.text.MessageFormat.format;
 

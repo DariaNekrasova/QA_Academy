@@ -12,3 +12,8 @@ https://selenium2.ru/docs/user-extensions.html
 
 Spring
 https://habr.com/ru/post/455794/
+
+SAML аутентификация
+https://habr.com/ru/company/gemaltorussia/blog/322316/
+https://www.ispring.ru/articles/ediniy-vhod-s-ispolzovaniem-saml
+https://wiki.shibboleth.net/confluence/display/OpenSAML/OSTwoDevManJavaNewObject
