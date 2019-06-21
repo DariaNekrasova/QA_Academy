@@ -17,3 +17,5 @@ SAML аутентификация
 https://habr.com/ru/company/gemaltorussia/blog/322316/
 https://www.ispring.ru/articles/ediniy-vhod-s-ispolzovaniem-saml
 https://wiki.shibboleth.net/confluence/display/OpenSAML/OSTwoDevManJavaNewObject
+https://github.com/onelogin/java-saml
+MS azure saml https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-fed-saml-idp

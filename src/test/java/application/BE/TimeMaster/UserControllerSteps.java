@@ -4,6 +4,8 @@ import application.BE.model.TimeMasterModeles.UserDto;
 import com.thoughtworks.gauge.Step;
 import gauge.AbstractStep;
 
+import static application.BE.TimeMaster.Authorisation.autorisation;
+
 public class UserControllerSteps extends AbstractStep {
 
     private UserController userController = new UserController();
@@ -18,6 +20,7 @@ public class UserControllerSteps extends AbstractStep {
 
     @Step("Who Am I")
     public void who(){
+        autorisation.auth();
         userController.whoAmI();
     }
 }
