@@ -1,11 +1,12 @@
 package application.BE.TimeMaster;
 
 import application.BE.model.TimeMasterModeles.UserDto;
+import application.BE.model.TimeMasterModeles.WhoAmIDto;
 import com.thoughtworks.gauge.Step;
 import gauge.AbstractStep;
+import lombok.extern.slf4j.Slf4j;
 
-import static application.BE.TimeMaster.Authorisation.autorisation;
-
+@Slf4j
 public class UserControllerSteps extends AbstractStep {
 
     private UserController userController = new UserController();
@@ -20,7 +21,7 @@ public class UserControllerSteps extends AbstractStep {
 
     @Step("Who Am I")
     public void who(){
-        autorisation.auth();
-        userController.whoAmI();
+        WhoAmIDto who = userController.whoAmI();
+        log.info(who.toString());
     }
 }

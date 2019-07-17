@@ -2,13 +2,9 @@ package application.BE.TimeMaster;
 
 import application.BE.AbstractController;
 import application.BE.model.TimeMasterModeles.UserDto;
+import application.BE.model.TimeMasterModeles.WhoAmIDto;
 import application.Utils.PropertyManager;
-import com.jayway.restassured.http.ContentType;
-import com.jayway.restassured.response.Header;
 import lombok.extern.slf4j.Slf4j;
-
-import static application.BE.TimeMaster.Authorisation.autorisation;
-import static com.jayway.restassured.RestAssured.given;
 
 @Slf4j
 public class UserController extends AbstractController {
@@ -25,12 +21,11 @@ public class UserController extends AbstractController {
     }
 
     public String login(UserDto userDto) {
-        //String uri = contextUri + "/api/login/";
-        //String location =  post(uri).extract().header("Location");
-        //post(micro_uri, body);
-        //csrf = post(complete).extract().header("Cookie");
-        //String[] cs = csrf.split("=[*.];");
-
+        String uri = contextUri + "/api/login/";
+        String location = post(uri).extract().header("Location");
+        post(micro_uri, body);
+        csrf = post(complete).extract().header("Cookie");
+        String[] cs = csrf.split("=[*.];");
 
         return "Ok";
     }
@@ -40,13 +35,9 @@ public class UserController extends AbstractController {
         post(uri).extract().header("Location");
     }
 
-    public void whoAmI() {
+    public WhoAmIDto whoAmI() {
         String uri = contextUri + "/api/whoami/";
-        //get(uri);
-        String response = given().header(new Header("X-CSRFTOKEN", autorisation.getXCSRF()))
-               .contentType(ContentType.JSON).when().then().response().toString();
-        log.info("----------> " + response);
-
+        return get(uri, WhoAmIDto.class);
     }
 
     public void setAuth(String uri) {

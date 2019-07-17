@@ -5,11 +5,14 @@ import com.jayway.restassured.http.ContentType;
 import com.jayway.restassured.response.Header;
 import com.jayway.restassured.response.ValidatableResponse;
 import com.jayway.restassured.specification.RequestSpecification;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.Map;
 
+import static application.BE.TimeMaster.Authorisation.autorisation;
 import static com.jayway.restassured.RestAssured.given;
 
+@Slf4j
 public abstract class AbstractController {
     protected static final String EMPTY_BODY = "";
 
@@ -21,9 +24,9 @@ public abstract class AbstractController {
 
     protected RequestSpecification getSpecification() {
         RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
-        return given().header(new Header("csrftoken",
-                                         "Mq4Yu6OUxFPSl680bQ6qngyW8GeIcaA4OdpEnxK2Bw05dX9DZfDr3fRoUTKEANzB"))
-                      .header(new Header("sessionid", "k480bjkka0de0gmwijkh83eorplrwvqa"))
+        String token = getToken();
+        log.info("token - " + token);
+        return given().header(new Header("X-CSRFTOKEN", token))
                       .contentType(ContentType.JSON);
     }
 
@@ -129,5 +132,11 @@ public abstract class AbstractController {
 
     protected ValidatableResponse delete(RequestSpecification specification, String uri, String json) {
         return specification.body(json).when().delete(uri).then();
+    }
+
+    private String getToken(){
+        if(autorisation.getXCSRF() == null)
+            autorisation.auth();
+        return autorisation.getXCSRF();
     }
 }

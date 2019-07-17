@@ -24,29 +24,28 @@ public class Authorisation {
     private static final String TM_URI = "https://timemaster-dev2.sidenis.local";
     private static final String MS_URI = "https://login.microsoftonline.com";
 
-    static final Authorisation autorisation = new Authorisation();
+    public static final Authorisation autorisation = new Authorisation();
 
     private String CSRFToken;
-
-    private Authorisation(){setDriver();auth();}
 
     public String getXCSRF(){
         return CSRFToken;
     }
 
-    void auth(){
+    public void auth(){
+        setDriver();
         driver.get(TM_URI);
         sleep(5000);
 
         log.info("should be MS site -> " + driver.getCurrentUrl());
 
         LoginPage login = new LoginPage();
-        log.info("user name -> "+ System.getProperty("user_name") + "  password -> " + System.getProperty("user_password"));
 
-        login.setLogin(System.getProperty("user_name"), System.getProperty("user_password"));
+        login.setLogin(PropertyManager.getProperty("user_name"), PropertyManager.getProperty("user_password"));
 
-        sleep(5000);
         //assertThat(driver.getCurrentUrl()).contains(TM_URI);
+
+        sleep(10000);
 
         log.info("should be TM site -> " + driver.getCurrentUrl());
 
@@ -54,6 +53,8 @@ public class Authorisation {
         CSRFToken = driver.manage().getCookies().stream().filter(cookie -> cookie.getName().equals("csrftoken")).findFirst().get().getValue();
 
         log.info("token -> " + CSRFToken);
+
+        //closeWebDriver();
     }
 
     private void setDriver(){
@@ -61,5 +62,9 @@ public class Authorisation {
         driver = DriverFactory.getDriver();
         driver.manage().timeouts().pageLoadTimeout(20000, TimeUnit.MILLISECONDS);
         WebDriverRunner.setWebDriver(driver);
+    }
+
+    private void closeWebDriver() {
+        WebDriverRunner.closeWebDriver();
     }
 }

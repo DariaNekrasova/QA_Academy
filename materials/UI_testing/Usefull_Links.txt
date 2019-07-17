@@ -19,3 +19,6 @@ https://www.ispring.ru/articles/ediniy-vhod-s-ispolzovaniem-saml
 https://wiki.shibboleth.net/confluence/display/OpenSAML/OSTwoDevManJavaNewObject
 https://github.com/onelogin/java-saml
 MS azure saml https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-fed-saml-idp
+
+задачки
+https://www.youtube.com/watch?v=y-ZyxTWHH08&list=PLsVTVVvrKX9tkmqfzDfdzv4I5NlPZYD6P&index=11&t=0s

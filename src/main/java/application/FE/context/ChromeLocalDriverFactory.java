@@ -10,9 +10,13 @@ class ChromeLocalDriverFactory implements MvcDriverFactory {
     @Override
     public WebDriver create() {
         ChromeOptions options = new ChromeOptions();
+        return new ChromeDriver(options);
+    }
 
-        if (PropertyManager.getPropertyAsBoolean("HEADLESS_MODE", false))
-            options.addArguments("--headless");
+    public WebDriver createWithoutHead() {
+        ChromeOptions options = new ChromeOptions();
+
+        if (PropertyManager.getPropertyAsBoolean("HEADLESS_MODE", false)) options.addArguments("--headless");
 
         return new ChromeDriver(options);
     }

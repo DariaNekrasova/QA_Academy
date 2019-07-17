@@ -8,6 +8,10 @@ public class DriverFactory {
         return factoryImplementation().create();
     }
 
+    public static WebDriver getNoHeadDriver() {
+        return factoryImplementation().createWithoutHead();
+    }
+
     private static MvcDriverFactory factoryImplementation() {
             return new ChromeLocalDriverFactory();
     }
