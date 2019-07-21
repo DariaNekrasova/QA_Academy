@@ -1,11 +1,13 @@
 import com.thoughtworks.gauge.Step;
 import com.thoughtworks.gauge.Table;
 import com.thoughtworks.gauge.TableRow;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.HashSet;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Slf4j
 public class StepImplementation {
 
     private HashSet<Character> vowels;
