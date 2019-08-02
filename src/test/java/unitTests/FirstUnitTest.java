@@ -58,7 +58,7 @@ public class FirstUnitTest {
 
         field.submit();
 
-//        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 
 //        WebElement dynamicElement = (new WebDriverWait(driver, 10))
 //                .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='vk-t']")));
