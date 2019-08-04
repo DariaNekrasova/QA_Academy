@@ -1,6 +1,7 @@
 package unitTests;
 
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.SelenideElement;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -12,6 +13,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
+import static com.codeborne.selenide.Condition.disappear;
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 import static com.jayway.restassured.RestAssured.get;
 import static org.hamcrest.core.IsEqual.equalTo;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -63,5 +68,19 @@ public class FirstUnitTest {
 //        WebElement dynamicElement = (new WebDriverWait(driver, 10))
 //                .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='vk-t']")));
         driver.close();
+    }
+
+    @Test
+    public void userCanLoginByUsername() {
+        System.setProperty("webdriver.chrome.driver", "./src/test/resourсes/chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.get("http://www.google.com");
+        open("/login");
+        SelenideElement el = $("//span[@class='MiYK0e']");
+//        el.click();
+//        $(By.name("user.name")).setValue("johny");
+//        $("#submit").click();
+//        $(".loading_progress").should(disappear); // Само подождёт, пока элемент исчезнет
+//        $("#username").shouldHave(text("Hello, Johny!")); // Само подождёт, пока у элемента появится нужный текст
     }
 }
